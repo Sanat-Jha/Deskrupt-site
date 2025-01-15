@@ -1,0 +1,33 @@
+.page{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    vertical-align: -webkit-baseline-middle;
+}
+h2{
+    font-family: "headingfont";
+    color: white;
+    font-size: 4em;
+}
+#username, #password{
+    font-family: "funckyfont";
+    color: white;
+    background-color: black;
+    border: solid blue 1px ;
+    padding: 1% 1%;
+    border-radius: 5px;
+    font-size: 1.5em;
+    margin: auto;
+    margin-top: 1%;
+}
+.submitbtn{
+    font-family: "funckyfont";
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border: solid blue 1px ;
+    padding: 1% 3%;
+    font-size: 1.5em;
+    margin: auto;
+    margin-top: 2%;
+}

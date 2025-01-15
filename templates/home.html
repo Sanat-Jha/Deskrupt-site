@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}   
+{% block title %}DeskRupt{% endblock %}
+{% block header %}
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+{% endblock %}
+{% block content %}
+<div class="mainpage">
+<div class="headertext">Bored With That Old Boring Windows Desktop?</div>
+    <div class="homeimage">
+        
+        <img src="{% static 'img/homeBGcomputer.png' %}" alt="" class="homecomputerimage">
+    </div>
+</div>
+<div style="height: 40px;"></div>
+<a href="/dashboard" class="nextbtn">Click Here To Start</a>
+<div class="bottomtext">DeskRupt is here to disrupt your old boring windows desktop and give you the powers to design and customize your own desktop with a great collection of animations and widgets.</div>
+{% endblock %}

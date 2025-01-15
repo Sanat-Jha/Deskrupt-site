@@ -1,0 +1,40 @@
+body {
+    background-color: black;
+    color: blue;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.font-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.font-card {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border: 1px solid #444;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.font-card:hover {
+    background-color: #333;
+}
+
+.font-name {
+    font-size: 20px;
+    margin: 0;
+    word-break: break-word;
+}
+
+.loading {
+    text-align: center;
+    color: blue;
+    padding: 20px;
+    font-size: 18px;
+}

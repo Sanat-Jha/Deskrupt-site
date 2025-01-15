@@ -1,0 +1,46 @@
+
+{% extends 'base.html' %}
+{% load static %}   
+{% block title %}Your Decks{% endblock %}
+{% block header %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+{% endblock %}
+{% block content %}
+<div class="page-container">
+    <div class="topbar">
+        <span class="pageheader">{{user.username}}'s Decks</span>
+        <a href="/createnewdeck" class="createbtn">+ New Deck</a>
+    </div>
+    <div class="decklist">
+        {% for deck in decks %}
+        <div class="deckitem">
+            <div class="deckitemlead">
+                <span class="index">{{forloop.counter}}</span>
+                <img src="{{deck.background_image.url}}" alt="Home" class="deckimage">
+                <span class="decktitle">{{deck.title}}</span>
+            </div>
+            <div class="deckitemcenter">
+                <span class="deck">Deck - </span>
+                <span class="deckname">{{user.username}}/{{deck.title}}</span>
+                <!-- Copy button with an icon -->
+                <button class="copybtn" onclick="copyToClipboard('{{user.username}}/{{deck.title}}')">
+                    <i class="fa fa-copy"></i> <!-- Font Awesome copy icon -->
+                </button>
+            </div>
+            <div class="deckitemtrail">
+                <a href="/edit/{{deck.title}}" class="editbtn">Edit</a>
+
+                <div class="lastedit">Last Edit: {{deck.last_modified|date:"M, j Y" }}</div>
+                <!-- Delete button -->
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    
+    <script src="{% static 'js/dashboard.js' %}"></script>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}DeskRupt{% endblock %}</title>
+    <link rel="shortcut icon" href="{% static 'img/logo without text.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block header %}
+
+
+{% endblock %}
+</head>
+<body>
+<nav class="navbar">
+    <div class="navlogo">
+        <a href="/"><img src="{% static 'img/logo with text.png' %}" alt="DeskRupt" ><a href="/"></a>
+    </div>
+    <div class="navlinks">
+        <a href="/downloadapp" class="navlink">
+            Download Deskrupt App
+        </a>
+        
+        {% if user.is_authenticated  %}
+        <a href="/dashboard" class="navlink navbarusername">{{user.username}}</a>
+        <a href="/logout" class="navlink">Logout</a>
+        {% else %}
+        <a href="/login" class="navlink">Login</a>
+        <a href="/register" class="navlink">Sign Up</a>
+        {% endif %}
+    </div>
+
+</nav>
+{% block content %}
+<!-- Content from child templates will go here -->
+{% endblock %}
+</body>
+</html>

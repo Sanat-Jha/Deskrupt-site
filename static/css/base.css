@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'mainfont';
+    src: url("../fonts/mainfont.ttf");
+}
+@font-face {
+    font-family: 'headingfont';
+    src: url("../fonts/headingfont.ttf");
+}
+@font-face {
+    font-family: 'funckyfont';
+    src: url("../fonts/funckyfont.ttf");
+}
+body{
+    background-color: black;
+    font-family: "mainfont";
+    cursor: url('../img/mouse.png'), auto;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid blue 1px;
+    align-items: center;
+}
+.navlogo{
+    margin-left: 2%;
+}
+.navlogo img{
+    width: 8%;
+}
+.navlinks{
+    font-size: 1.2rem;
+    margin-right: 2%;
+}
+.navlink{
+    color: blue;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.navbarusername{
+    font-size: 1.6rem;
+}

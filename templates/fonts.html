@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Fonts Gallery{% endblock %}
+
+{% block header %}
+<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="font-gallery" id="font-gallery"></div>
+<div id="loading" class="loading">Loading more fonts...</div>
+
+<script>
+    const fonts = [{% for font in fonts %}"{{ font }}"{% if not forloop.last %}, {% endif %}{% endfor %}];
+    const batchSize = 100; // Number of fonts to load per batch
+    let currentIndex = 0;
+
+    function loadFonts() {
+        const gallery = document.getElementById('font-gallery');
+        const loading = document.getElementById('loading');
+
+        // Load fonts in batches
+        for (let i = currentIndex; i < currentIndex + batchSize && i < fonts.length; i++) {
+            const font = fonts[i];
+
+            // Create font card
+            const fontCard = document.createElement('div');
+            fontCard.className = 'font-card';
+
+            // Create font name element
+            const fontName = document.createElement('p');
+            fontName.className = 'font-name';
+            fontName.textContent = font;
+            fontName.style.fontFamily = font;
+            fontName.onclick = () => copyToClipboard(font);
+
+            // Append font name to font card
+            fontCard.appendChild(fontName);
+            gallery.appendChild(fontCard);
+
+            // Dynamically load Google Font
+            const encodedFontName = font.replace(/ /g, '+');
+            const link = document.createElement('link');
+            link.href = `https://fonts.googleapis.com/css2?family=${encodedFontName}&display=swap`;
+            link.rel = 'stylesheet';
+            document.head.appendChild(link);
+        }
+
+        currentIndex += batchSize;
+
+        // Hide loading indicator when all fonts are loaded
+        if (currentIndex >= fonts.length) {
+            loading.style.display = 'none';
+        }
+    }
+
+    function copyToClipboard(fontName) {
+        navigator.clipboard.writeText(fontName).then(() => {
+            alert(fontName + " copied to clipboard!");
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    }
+
+    // Infinite scroll event listener
+    window.addEventListener('scroll', () => {
+        const loading = document.getElementById('loading');
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+            loadFonts();
+        }
+    });
+
+    // Initial load
+    loadFonts();
+</script>
+{% endblock %}

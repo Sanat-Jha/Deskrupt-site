@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Register{% endblock %}
+{% block header %}
+
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+{% endblock %}
+{% block content %}
+<div class="page">
+    <h2>Register</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <!-- Restricting username to letters and numbers only -->
+        <input type="text" id="username" name="username" placeholder="Username" 
+               pattern="^[a-zA-Z0-9]+$" 
+               title="Username can only contain letters and numbers." 
+               required><br><br>
+
+        <input type="password" id="password" name="password1" placeholder="Password" required><br><br>
+
+        <input type="password" id="password" name="password2" placeholder="Confirm Password" required><br><br>
+
+        <button type="submit" class="submitbtn">Register</button>
+    </form>
+</div>
+{% endblock %}

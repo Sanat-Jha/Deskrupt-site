@@ -1,0 +1,373 @@
+.topbar {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  align-items: center; /* Ensure the content is vertically aligned */
+  position: relative; /* To position the delete icon */
+}
+
+.pageheader {
+  font-family: "headingfont";
+  color: white;
+  font-size: 2em;
+  margin-left: 2%;
+}
+
+.title {
+  font-family: "funckyfont";
+  color: white;
+  background-color: black;
+  border: solid blue 1px;
+  padding: 1% 1%;
+  border-radius: 5px;
+  font-size: 1em;
+  width: 200px;
+  margin-left: 10px;
+}
+
+.delete-icon {
+  font-size: 1.5em; /* Icon size */
+  color: white;
+  margin-left: auto; /* Push the icon to the right */
+  margin-right: 2%; /* Add some space to the right */
+  cursor: pointer; /* Makes the icon clickable */
+}
+.delete-icon:hover {
+  color: red;
+}
+
+
+
+.image-upload-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.image-upload input[type="file"] {
+  display: none;
+}
+
+.upload-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1f1f1f;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.upload-label:hover {
+  background-color: #333333;
+  transform: scale(1.05);
+}
+
+.preview-container {
+  width: 300px;
+  height: 150px;
+  border: 2px dashed #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.placeholder {
+  color: #aaaaaa;
+  font-size: 14px;
+}
+
+.animation-dropdwn {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #007bff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 2%;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+  display: block;
+  width: 100%; /* Allow it to expand */
+  max-width: 300px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.animation-dropdwn:hover {
+  border-color: #0056b3;
+}
+
+.animation-dropdwn:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.save-btn {
+  font-family: "funckyfont";
+  color: rgb(255, 255, 255);
+  background-color: black;
+  border: solid blue 1px;
+  padding: 1% 2%;
+  display: block;
+  font-size: 1.2em;
+  margin: auto;
+  margin-top: 2%;
+  width: 200px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background-color: blue;
+  color: black;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page {
+    padding: 10px;
+  }
+
+  .image-upload-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .preview-container {
+    width: 250px;
+    height: 125px;
+  }
+
+  .title {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .animation-dropdwn {
+    width: 100%;
+    max-width: none;
+  }
+
+  .save-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pageheader {
+    font-size: 1.5em;
+  }
+}
+
+
+
+#shortcuts-container {
+  margin: 20px 0;
+}
+
+.shortcut {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.shortcut label {
+  margin-right: 10px;
+  color: white;
+}
+
+.shortcut-key {
+  font-family: "funckyfont";
+  color: white;
+  background-color: black;
+  border: solid blue 1px;
+  padding: 0.5% 0.5%;
+  border-radius: 5px;
+  font-size: 0.8em;
+  width: 50px;
+  margin-left: 10px;
+}
+
+.shortcut-command {
+  font-family: "funckyfont";
+  color: white;
+  background-color: black;
+  border: solid blue 1px;
+  padding: 0.5% 0.5%;
+  border-radius: 5px;
+  font-size: 0.8em;
+  width: 200px;
+  margin-left: 10px;
+}
+.shortcutsarrowicon{
+  color: white;
+  margin: 0% 1%;
+}
+
+#add-shortcut-btn{
+  font-family: "funckyfont";
+  color: rgb(255, 255, 255);
+  background-color: black;
+  border: solid blue 1px;
+  padding: 1% 2%;
+  font-size: 1.2em;
+  margin-top: 2%;
+  cursor: pointer;
+}
+.delete-btn{
+  font-family: "funckyfont";
+  color: rgb(255, 255, 255);
+  background-color: black;
+  border: solid blue 1px;
+  padding: 0.5% 0.5%;
+  font-size: 0.8em;
+  margin-left: 1%;
+  cursor: pointer;
+
+}
+
+button:hover {
+  background-color: blue;
+  color: black;
+}
+
+.sectionsubheading{
+  font-family: "headingfont";
+  color: white;
+  font-size: 1.5em;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+.widgets-choose-dropdown{
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #007bff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 2%;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+  width: 100%; /* Allow it to expand */
+  max-width: 300px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.add-widget-btn{
+  font-family: "funckyfont";
+  color: rgb(255, 255, 255);
+  background-color: black;
+  border: solid blue 1px;
+  padding: 0.5% 1%;
+  font-size: 1.2em;
+  margin-top: 2%;
+  margin-left: 1%;
+  cursor: pointer;
+}
+
+.add-widget-btn:hover {
+  background-color: blue;
+  color: black;
+}
+
+.widget {
+  border: 2px solid #007BFF; /* Blue border for the widget */
+  border-radius: 8px; /* Rounded corners */
+  padding: 2%; /* More padding around the widget */
+  background-color: #000000; /* Dark background for the widget */
+  margin: 20px; /* Centered on the page */
+  width: max-content;
+  min-width: 30%;
+}
+
+.widget label {
+  display: block;
+  margin-bottom: 5px; /* Space between label and input */
+  color: #f1f1f1; /* Light text for labels */
+  font-weight: 500;
+  grid-column: span 1; /* Each label takes one grid cell */
+}
+
+.widget input, .widget select {
+  width: 100%; 
+  background-color: #333; /* Dark background for inputs */
+  color: white; /* White text */
+  border: 1px solid #007BFF; /* Blue border */
+  padding: 10px; /* Padding inside the input field */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 15px; /* Space between inputs */
+  font-size: 14px; /* Larger text inside inputs */
+  grid-column: span 1; /* Each input takes one grid cell */
+}
+
+.widget input[type="color"], .widget select {
+  width: auto; /* Auto-width for color picker and select */
+  margin-right: 10px; /* Space between color picker and label */
+}
+
+.widget input[type="number"] {
+  -webkit-appearance: none; /* Remove spinner in number inputs for modern browsers */
+  -moz-appearance: textfield;
+}
+
+.widget button.delete-widget-btn {
+  background-color: #FF4136; /* Red color for delete button */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding for the button */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Slightly larger font for the button */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+  margin-top: 10px; /* Space above the button */
+  grid-column: span 2; /* The delete button spans both columns */
+  width: 100%; /* Full width for the button */
+}
+
+.widget button.delete-widget-btn:hover {
+  background-color: #FF6347; /* Lighter red when hovered */
+}
+
+/* Hover effect for inputs and select */
+.widget input:hover, .widget select:hover {
+  border-color: #0056b3; /* Darker blue border when hovered */
+  background-color: #444; /* Slightly lighter background on hover */
+}
+
+.widget input:focus, .widget select:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #28a745; /* Green border on focus */
+  background-color: #555; /* Slightly lighter background on focus */
+}
+
+.widget .widgettitle {
+  font-size: 18px; /* Larger title font */
+  font-weight: bold; /* Bold title */
+  color: #f1f1f1; /* Light color for title */
+  margin-bottom: 10px; /* Space below title */
+  text-align: center; /* Center title */
+  grid-column: span 2; /* Title spans both columns */
+}
+.widgettitle{
+  cursor: pointer;
+  font-size: 25px;
+}
